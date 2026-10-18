@@ -11,7 +11,7 @@ variable "name" {
 variable "github_repo" {
   description = "Only pushes to this repository's main branch may deploy."
   type        = string
-  default     = "gumagatsby/portfolio"
+  default     = "tapiwa-magumise/portfolio"
 }
 
 variable "price_class" {
