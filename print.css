@@ -1,0 +1,17 @@
+/* Print: Cmd+P or File > Print gives a clean resume */
+@page { size: A4; margin: 9mm 12mm; }
+:root, :root[data-theme] { --body-bg: #ffffff !important; }
+html, body { height: auto; overflow: visible; }
+body > *:not(.print-resume) { display: none !important; }
+.print-resume { display: block; font: 9pt/1.28 "Helvetica Neue", Helvetica, Arial, sans-serif; color: #111; font-variant-ligatures: none; font-feature-settings: "liga" 0, "clig" 0; }
+.print-resume h1 { font-size: 18pt; margin: 0; color: #1f3a5f; }
+.print-resume .hl { font-weight: 600; margin: 2px 0; }
+.print-resume .ct { color: #333; border-bottom: 2px solid #1f3a5f; padding-bottom: 6px; margin-bottom: 8px; }
+.print-resume h2 { font-size: 10pt; text-transform: uppercase; letter-spacing: .08em; color: #1f3a5f; border-bottom: 1px solid #c9d3df; margin: 7px 0 3px; padding-bottom: 2px; }
+.print-resume .r-head span, .print-resume .r-sub { color: #444; font-size: 9.5pt; }
+.print-resume ul { margin: 1px 0 3px; padding-left: 15px; }
+.print-resume .r-head { display: flex; justify-content: space-between; }
+.print-resume li { margin-bottom: 1px; }
+.print-resume p { margin: 0 0 3px; }
+.notch { display: none !important; }
+.login-wall { display: none !important; }

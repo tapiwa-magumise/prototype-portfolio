@@ -1,0 +1,20 @@
+# Only the site, its Terraform and CI are published. Source art, previews,
+# the accelerator app and job-board scans stay on this machine.
+art/
+previews/
+accelerator-app/
+.jobscan/
+
+# Terraform: local state and plans stay on the machine that deploys
+terraform/.terraform/
+terraform/tfplan
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+
+.DS_Store
+
+# Local secrets
+.env
+.env.*
