@@ -6,6 +6,15 @@
 <title>Tapiwa Magumise | AWS Cloud Engineer</title>
 <meta name="description" content="Tapiwa Magumise, cloud engineer. Nine AWS projects with code and results, CV and contact.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tapiwa-magumise.github.io/portfolio/">
+<meta property="og:title" content="Tapiwa Magumise | AWS Cloud Engineer">
+<meta property="og:description" content="Nine AWS projects with their architecture, measured results and the decisions behind them. CV and contact inside.">
+<meta property="og:image" content="https://tapiwa-magumise.github.io/portfolio/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tapiwa Magumise's portfolio: a Mac desktop with the introduction open">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root {
     --font-ui: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -987,7 +996,7 @@
     desktop.removeAttribute('aria-hidden');
     loginEl.setAttribute('aria-hidden', 'true');
     if (target) openWindow(target, loc);
-    else if (!restoreSession()) { if (!phone.matches) openWindow('projects'); openWindow('readme'); }
+    else if (!restoreSession()) openWindow('readme');
     if (!target) notifyOnce();
   }
   document.getElementById('enter').addEventListener('click', function () { login(); });
@@ -2784,8 +2793,7 @@
       document.body.classList.remove('in-intro');
       introEl.remove();
       loginEl.classList.add('arrive');
-      requestAnimationFrame(function () { loginEl.style.transition = ''; });
-      setTimeout(function () { login(); }, 1400);
+      requestAnimationFrame(function () { loginEl.style.transition = ''; login(); });
     }
     function skip() {                                     // straight to the login
       if (done) return;
