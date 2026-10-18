@@ -1,9 +1,7 @@
 name: deploy
 
+# Manual only until the AWS account is verified for CloudFront; pages.yml serves the site meanwhile.
 on:
-  push:
-    branches: [main]
-    paths: ["index.html", "print.css", "favicon.svg", "assets/**"]
   workflow_dispatch:
 
 permissions:

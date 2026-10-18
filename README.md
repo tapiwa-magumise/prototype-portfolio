@@ -2,14 +2,15 @@
 
 My portfolio, built as a macOS desktop in a single `index.html` with no framework or build step. The Projects folder holds case studies of nine AWS projects, each linked to its repo.
 
-It runs on AWS: a private S3 bucket behind CloudFront, reachable only through CloudFront's origin access control, with HTTPS and CloudFront's managed security headers. It uses CloudFront's own domain, so there is no Route 53 zone or certificate to pay for.
+It is served from GitHub Pages for now, because the AWS account is waiting on verification before it can create CloudFront distributions. The AWS version is ready in `terraform/`: a private S3 bucket behind CloudFront, reachable only through CloudFront's origin access control, with HTTPS and CloudFront's managed security headers. It uses CloudFront's own domain, so there is no Route 53 zone or certificate to pay for.
 
 ## Layout
 
 - `index.html`, `print.css`, `favicon.svg`, `assets/`: the site
 - `terraform/`: bucket, distribution and the deploy role
 - `.github/workflows/ci.yml`: checks the page's scripts parse and every file it references exists; Terraform fmt, tflint and validate
-- `.github/workflows/deploy.yml`: on a push to `main` that changes the site, uploads it and clears the CloudFront cache
+- `.github/workflows/pages.yml`: on a push to `main` that changes the site, publishes the site files to GitHub Pages
+- `.github/workflows/deploy.yml`: uploads the site to S3 and clears the CloudFront cache (manual until CloudFront is available)
 
 ## Deploying
 
