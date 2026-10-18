@@ -2,6 +2,10 @@
 
 My portfolio, built as a macOS desktop in a single `index.html` with no framework or build step. The Projects folder holds case studies of nine AWS projects, each linked to its repo.
 
+This is the first version. The current portfolio, drawn as AWS architecture, is at [tapiwa-magumise.github.io/portfolio](https://tapiwa-magumise.github.io/portfolio/) ([repository](https://github.com/tapiwa-magumise/portfolio)), where this site is also drawn as a project.
+
+![How the first version is hosted](docs/architecture.png)
+
 It is served from GitHub Pages for now, because the AWS account is waiting on verification before it can create CloudFront distributions. The AWS version is ready in `terraform/`: a private S3 bucket behind CloudFront, reachable only through CloudFront's origin access control, with HTTPS and CloudFront's managed security headers. It uses CloudFront's own domain, so there is no Route 53 zone or certificate to pay for.
 
 ## Layout
