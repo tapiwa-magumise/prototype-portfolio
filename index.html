@@ -1126,7 +1126,7 @@
       ],
       next: ["A cross-region read replica, to cut the data loss window to seconds", "Route 53 failover records, so users follow the app to Ireland automatically", "Multi-AZ for the database, so losing one data centre does not need the DR plan at all"] },
 
-    { id: "security-review", name: "Security and cost review tool", group: "Foundations and security", repo: "aws-security-cost-review", img: "security-cost-review",
+    { id: "security-review", name: "Security and Cost Review Agent", group: "Foundations and security", repo: "aws-security-cost-review", img: "security-cost-review",
       stack: "Python, python-hcl2, boto3, IAM SecurityAudit role, Amazon Bedrock, Terraform, pytest, moto",
       cv: "Python tool that reviews Terraform code or a live AWS account against 24 Well-Architected rules, through a read-only role.",
       problem: "A small company on AWS has no cloud specialist. The bill has crept up, and a customer's security questionnaire asks who can reach their data. A consultant answers that by hand over several days.",
