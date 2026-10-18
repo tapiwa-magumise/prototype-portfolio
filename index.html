@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tapiwa Magumise</title>
+<title>Tapiwa Magumise | AWS Cloud Engineer</title>
 <meta name="description" content="Tapiwa Magumise, cloud engineer. Nine AWS projects with code and results, CV and contact.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
@@ -353,6 +353,23 @@
   .case ul { margin: 0; padding-left: 20px; }
   .case li { margin-bottom: 4px; }
   .case .btn-row { margin-top: 22px; }
+  .case .headline { font-size: 17px; font-weight: 600; line-height: 1.45; margin: 12px 0 18px; max-width: 62ch; }
+  .pitch .role { color: var(--text-muted); margin-top: -6px; }
+  .pitch .btn-row { margin: 16px 0 14px; }
+  .doc a.btn { color: inherit; text-decoration: none; }
+  .doc .how { color: var(--text-muted); font-size: 13px; }
+  .linkish { color: var(--select); padding: 0; font: inherit; text-decoration: underline; cursor: pointer; }
+  .build h2 { font-size: 15px; margin: 20px 0 10px; }
+  .build table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .build th, .build td { text-align: left; vertical-align: top; padding: 7px 10px; border-bottom: 1px solid var(--window-border); }
+  .build th { font-weight: 600; width: 34%; }
+  .build ul { margin: 0; padding-left: 20px; }
+  .build li { margin-bottom: 4px; }
+  .flow { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; }
+  .flow li { flex: 1 1 120px; margin: 0; border: 1px solid var(--window-border); border-radius: 6px; padding: 8px 10px; font-size: 13px; line-height: 1.4; }
+  .flow li span { display: block; font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+  .flow li { position: relative; }
+  .flow li + li::before { content: "\2192"; position: absolute; left: -17px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 14px; }
   .am a { color: inherit; text-decoration: none; }
   .am a:hover { text-decoration: underline; }
 
@@ -371,6 +388,15 @@
     .dock { gap: 4px; }
     .window { left: 0 !important; width: 100% !important; border-radius: 0; }
     .case { padding: 16px 16px 22px; }
+    .flow { flex-direction: column; gap: 20px; }
+    .flow li + li::before { content: "\2193"; left: 50%; top: -17px; transform: translateX(-50%); }
+    .lights { gap: 0; }
+    .lights button { width: 24px; height: 24px; background: none !important; position: relative; }
+    .lights button::before { content: ""; position: absolute; inset: 6px; border-radius: 50%; }
+    .lights .close::before { background: #ff5f57; } .lights .min::before { background: #febc2e; } .lights .zoom::before { background: #28c840; }
+    .window.inactive .lights:not(:hover) button::before { background: var(--light-off); }
+    .lights svg { position: relative; }
+    .titlebar .share { min-height: 24px; min-width: 24px; }
     .case th, .case td { display: block; width: auto; padding: 4px 0; border: 0; }
     .case tr { display: block; padding: 8px 0; border-bottom: 1px solid var(--window-border); }
   }
@@ -681,7 +707,7 @@
   <div class="intro-card" aria-hidden="true">
     <img src="assets/avatar.jpg" alt="">
     <div class="n">Tapiwa Magumise</div>
-    <div class="r">Cloud Engineer</div>
+    <div class="r">AWS Cloud Engineer</div>
   </div>
   <button class="intro-skip" type="button">Skip</button>
 </div>
@@ -694,12 +720,12 @@
 <main class="login" aria-label="Log in">
   <img src="assets/avatar.jpg" alt="Tapiwa Magumise">
   <div class="name">Tapiwa Magumise</div>
-  <div class="role">Cloud Engineer</div>
+  <div class="role">AWS Cloud Engineer</div>
   <button class="enter" id="enter" aria-label="Log in">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
   </button>
   <div class="hint">Opening the desktop</div>
-  <div class="login-links"><a href="assets/Tapuwanashe_Magumise_Resume_Cloud_Engineer.pdf" download>Download CV</a><a href="mailto:tapiwa.magumise96@gmail.com?subject=Hiring%20enquiry">Email me</a></div>
+  <div class="login-links"><a href="assets/Tapuwanashe_Magumise_Resume_Cloud_Engineer.pdf" download>Download CV</a><a href="mailto:tapiwa.magumise96@gmail.com?subject=Hiring%20enquiry">tapiwa.magumise96@gmail.com</a></div>
 </main>
 
 <!-- Desktop -->
@@ -770,13 +796,53 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <template id="tpl-readme">
-    <div class="doc">
-      <h1>How to get around</h1>
-      <p>This portfolio works like a Mac. Click anything to open it.</p>
-      <p>The folders on the right are the quick route. <b>Projects</b> holds nine AWS projects, each with its architecture, measured results and the decisions behind it. <b>Resume</b> and <b>Certifications</b> are next to it.</p>
-      <p>The <b>Hire</b> menu at the top has my email and CV.</p>
-      <p>Open <b>Terminal</b> and type <b>help</b> to see the commands it knows.</p>
-      <p>The sun and moon icon at the top switches between light and dark mode. Click the date and time for widgets.</p>
+    <div class="doc pitch">
+      <h1>Tapiwa Magumise</h1>
+      <p class="role">AWS Cloud Engineer, Harare, Zimbabwe</p>
+      <p>I spent almost three years moving 9 Zimbabwean hospitals off paper records and onto AWS. I now run <a href="https://paycanary.io" target="_blank" rel="noopener">PayCanary</a>, my own SaaS product for Stripe merchants.</p>
+      <p>I build on AWS with Terraform and GitHub Actions, and I hold the AWS Solutions Architect and Developer Associate certifications.</p>
+      <p>The Projects folder has nine AWS projects. Each shows the architecture, the measured results and the decisions behind it.</p>
+      <div class="btn-row">
+        <button class="btn" data-open="projects">Open Projects</button>
+        <a class="btn" href="assets/Tapuwanashe_Magumise_Resume_Cloud_Engineer.pdf" download>Download CV</a>
+      </div>
+      <p class="contact">Email <a href="mailto:tapiwa.magumise96@gmail.com?subject=Hiring%20enquiry">tapiwa.magumise96@gmail.com</a></p>
+      <p class="how">This site works like a Mac. Click anything to open it, or open Terminal and type help.</p>
+    </div>
+  </template>
+
+  <template id="tpl-sitebuild">
+    <div class="doc build">
+      <h1>How this site is built</h1>
+      <p>One HTML file with no framework and no build step. The code, its Terraform and its pipelines are public at <a href="https://github.com/tapiwa-magumise/portfolio" target="_blank" rel="noopener">github.com/tapiwa-magumise/portfolio</a>.</p>
+      <h2>How a change goes live</h2>
+      <ol class="flow">
+        <li><span>git push</span>to the main branch</li>
+        <li><span>CI</span>Every script parses, every referenced file exists, and the Terraform passes fmt, tflint and validate</li>
+        <li><span>Publish</span>Only the site files are uploaded, not the Terraform or the pipelines</li>
+        <li><span>GitHub Pages</span>Served over HTTPS</li>
+      </ol>
+      <h2>The AWS version, written in Terraform</h2>
+      <ol class="flow">
+        <li><span>GitHub Actions</span>Signs in to AWS with OIDC, so no AWS keys are stored</li>
+        <li><span>IAM deploy role</span>Can only upload site files and clear the cache, and only from the main branch</li>
+        <li><span>S3</span>Private, encrypted bucket, readable only through CloudFront</li>
+        <li><span>CloudFront</span>HTTPS, HTTP/3 and AWS's managed security headers</li>
+      </ol>
+      <h2>What it costs on AWS</h2>
+      <table>
+        <tr><th>S3 storage</th><td>$0.024 per GB a month in London. The site is about 14 MB, so under a cent a month.</td></tr>
+        <tr><th>CloudFront data out</th><td>$0.085 per GB in Europe</td></tr>
+        <tr><th>CloudFront requests</th><td>$0.012 per 10,000 HTTPS requests</td></tr>
+        <tr><th>Domain</th><td>None. It uses CloudFront's own domain, so there is no Route 53 zone or certificate to pay for.</td></tr>
+      </table>
+      <p class="how">Prices from the AWS Price List API, October 2026.</p>
+      <h2>Decisions and what they cost</h2>
+      <table>
+        <tr><th>One file, no build</th><td>Anyone can read the source as it is served. The file is large, so editing it needs care.</td></tr>
+        <tr><th>Infrastructure applied by hand</th><td>The pipeline can upload files but cannot change the bucket or the distribution. A Terraform change needs one manual step.</td></tr>
+        <tr><th>Short cache on the page</th><td>The page is cached for five minutes and media for a day, and each deploy clears the cache, so a change shows within minutes.</td></tr>
+      </table>
     </div>
   </template>
 
@@ -785,13 +851,14 @@
       <img src="assets/avatar.jpg" alt="Tapiwa Magumise">
       <div>
         <h1>Tapiwa Magumise</h1>
-        <div class="role">Cloud Engineer</div>
+        <div class="role">AWS Cloud Engineer</div>
         <dl>
           <dt>Based in</dt><dd>Harare, Zimbabwe</dd>
           <dt>Certified</dt><dd>AWS Solutions Architect and Developer (Associate)</dd>
           <dt>Work</dt><dd>Nine AWS projects, in the Projects folder</dd>
           <dt>Building</dt><dd><a href="https://paycanary.io" target="_blank" rel="noopener">PayCanary</a></dd>
-          <dt>This site</dt><dd>GitHub Pages, deployed by GitHub Actions. Terraform for S3 and CloudFront is in the repo</dd>
+          <dt>Email</dt><dd><a href="mailto:tapiwa.magumise96@gmail.com?subject=Hiring%20enquiry">tapiwa.magumise96@gmail.com</a></dd>
+          <dt>This site</dt><dd><button class="linkish" data-open="sitebuild">How this site is built</button></dd>
         </dl>
         <div class="btn-row">
           <a class="btn" href="assets/Tapuwanashe_Magumise_Resume_Cloud_Engineer.pdf" download>Download CV</a>
@@ -851,7 +918,7 @@
       <button class="dock-item" aria-label="Preview" data-open="preview"><span class="tip">Preview</span>
         <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#e9eef3"/><rect x="12" y="10" width="36" height="44" rx="3" fill="#fff" stroke="#b9c3cc"/><rect x="17" y="16" width="26" height="18" rx="2" fill="#7cb7d9"/><path d="M17 34l8-9 6 6 4-4 8 7z" fill="#3f7d5a"/><circle cx="44" cy="44" r="8" fill="none" stroke="#5a6672" stroke-width="3"/><path d="m50 50 6 6" stroke="#5a6672" stroke-width="4" stroke-linecap="round"/></svg>
       </button>
-      <button class="dock-item" aria-label="Calendar" data-open="calendar"><span class="tip">Calendar</span>
+      <button class="dock-item" data-open="calendar"><span class="tip">Calendar</span>
         <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#fff"/><text id="cal-month" x="32" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#e0443e"></text><text id="cal-day" x="32" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="400" fill="#1d1d1f"></text></svg>
       </button>
       <span class="dock-sep" aria-hidden="true"></span>
@@ -913,13 +980,14 @@
   var desktop = document.querySelector('.desktop');
   var loginEl = document.querySelector('.login');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var phone = window.matchMedia('(max-width: 700px)');
   function login(target, loc) {
     if (!document.body.classList.contains('locked') || document.body.classList.contains('in-intro')) return;
     document.body.classList.remove('locked');
     desktop.removeAttribute('aria-hidden');
     loginEl.setAttribute('aria-hidden', 'true');
     if (target) openWindow(target, loc);
-    else if (!restoreSession()) { openWindow('readme'); openWindow('projects'); }
+    else if (!restoreSession()) { if (!phone.matches) openWindow('projects'); openWindow('readme'); }
     if (!target) notifyOnce();
   }
   document.getElementById('enter').addEventListener('click', function () { login(); });
@@ -942,7 +1010,8 @@
   var registry = {
     about:          { title: 'About This Mac', app: 'Finder', w: 600, h: 330, tpl: 'tpl-about' },
     getinfo:        { title: 'Tapiwa Magumise Info', app: 'Finder', w: 440, h: 580, tpl: 'tpl-getinfo' },
-    readme:         { title: 'Read Me',        app: 'TextEdit',  w: 470, h: 440, tpl: 'tpl-readme' },
+    readme:         { title: 'Read Me',        app: 'TextEdit',  w: 500, h: 560, tpl: 'tpl-readme' },
+    sitebuild:      { title: 'How This Site Is Built', app: 'TextEdit', w: 720, h: 600, tpl: 'tpl-sitebuild' },
     resume:         { title: 'Resume',         app: 'Finder',    w: 760, h: 470, finder: 'resume' },
     certifications: { title: 'Certifications', app: 'Finder',    w: 760, h: 470, finder: 'certifications' },
     projects:       { title: 'Projects',       app: 'Finder',    w: 760, h: 470, finder: 'projects' },
@@ -980,6 +1049,8 @@
   var miniWindow = '<svg viewBox="0 0 64 64"><rect x="6" y="12" width="52" height="40" rx="5" fill="#f4f4f6" stroke="#b9bcc4"/><path d="M6 17a5 5 0 0 1 5-5h42a5 5 0 0 1 5 5v4H6z" fill="#dcdde2"/><circle cx="12" cy="16.5" r="1.6" fill="#ff5f57"/><circle cx="17" cy="16.5" r="1.6" fill="#febc2e"/><circle cx="22" cy="16.5" r="1.6" fill="#28c840"/><g stroke="#c4c6cc" stroke-width="2" stroke-linecap="round"><path d="M13 30h38M13 37h30M13 44h34"/></g></svg>';
 
   function place(el, r) {
+    // Phones: every window sits under the menu bar and fills the space above the dock.
+    if (phone.matches) r = { x: 0, y: MENU_TOP + 6, w: window.innerWidth, h: window.innerHeight - MENU_TOP - 104 };
     el.style.left = r.x + 'px'; el.style.top = r.y + 'px';
     el.style.width = r.w + 'px'; el.style.height = r.h + 'px';
   }
@@ -999,6 +1070,8 @@
     var def = registry[id];
     if (!def) return;
     if (id === 'launchpad') { toggleLaunchpad(); return; }
+    // Phones show one window at a time.
+    if (phone.matches) Object.keys(open).forEach(function (k) { if (k !== id) close(k); });
     if (open[id]) {
       restore(id);
       if (loc && open[id].loc && loc !== open[id].loc) navigate(id, loc);
@@ -1088,7 +1161,7 @@
   var resumePdf = { name: 'Tapuwanashe Magumise Resume.pdf', kind: 'PDF Document', icon: 'pdf', href: PDF };
   // ---------- Projects: nine AWS case studies. Every figure comes from the project's repo ----------
   var PROJECTS = [
-    { id: "landing-zone", name: "Multi-Account Landing Zone", group: "Foundations and security", repo: "aws-landing-zone", img: "landing-zone",
+    { id: "landing-zone", headline: "Guardrails no account can switch off, one audit trail of every API call, and sign-in with no long-lived passwords or keys. 19 Terraform tests check it on every change.", name: "Multi-Account Landing Zone", group: "Foundations and security", repo: "aws-landing-zone", img: "landing-zone",
       stack: "Terraform, AWS Organizations, service control policies, CloudTrail, IAM Identity Center, IAM Access Analyzer, GuardDuty, Security Hub",
       cv: "AWS organisation in Terraform with service control policies, an organisation-wide CloudTrail under Object Lock, and sign-in through IAM Identity Center.",
       problem: "Most companies start with one AWS account. Production, testing and billing live together, everyone has broad access, and one mistake can affect everything. When an auditor asks who did what, there is no reliable answer.",
@@ -1108,7 +1181,7 @@
       ],
       next: ["GuardDuty and Security Hub switched on", "Stricter guardrails for the production OU, which is kept separate for that reason"] },
 
-    { id: "hybrid-dr", name: "Hybrid Migration and DR", group: "Foundations and security", repo: "aws-hybrid-migration-dr", img: "hybrid-migration-dr",
+    { id: "hybrid-dr", headline: "Moved to AWS with 94 seconds of frozen writes, and serving from Ireland 18 min 27 s after London went down.", name: "Hybrid Migration and DR", group: "Foundations and security", repo: "aws-hybrid-migration-dr", img: "hybrid-migration-dr",
       stack: "Terraform, EC2, RDS for PostgreSQL, S3, Systems Manager, Secrets Manager",
       cv: "Moved an office app, its PostgreSQL database and files to AWS with 94 seconds of frozen writes and every row checked by hash. In the DR drill the app was back up in Ireland 18 min 27 s after London went down.",
       problem: "A small company runs its job-tracking app, a PostgreSQL database and a folder of uploaded files on one server in the office.",
@@ -1126,7 +1199,7 @@
       ],
       next: ["A cross-region read replica, to cut the data loss window to seconds", "Route 53 failover records, so users follow the app to Ireland automatically", "Multi-AZ for the database, so losing one data centre does not need the DR plan at all"] },
 
-    { id: "security-review", name: "Security and Cost Review Agent", group: "Foundations and security", repo: "aws-security-cost-review", img: "security-cost-review",
+    { id: "security-review", headline: "Found 16 issues in a live AWS account through a read-only role, 3 of them high, including no CloudTrail trail in any region.", name: "Security and Cost Review Agent", group: "Foundations and security", repo: "aws-security-cost-review", img: "security-cost-review",
       stack: "Python, python-hcl2, boto3, IAM SecurityAudit role, Amazon Bedrock, Terraform, pytest, moto",
       cv: "Python agent that reviews Terraform code or a live AWS account against 24 Well-Architected rules, through a read-only role.",
       problem: "A small company on AWS has no cloud specialist. The bill has crept up, and a customer's security questionnaire asks who can reach their data. A consultant answers that by hand over several days.",
@@ -1146,7 +1219,7 @@
       ],
       next: ["The Operational Excellence, Performance Efficiency and Sustainability pillars", "A model-written summary in the live report once Bedrock access is restored"] },
 
-    { id: "sales-pipeline", name: "Serverless Sales Pipeline", group: "Data", repo: "aws-serverless-sales-pipeline", img: "serverless-sales-pipeline",
+    { id: "sales-pipeline", headline: "No sale is lost silently: every rejected row is kept with its reasons, and uploading a file twice never double-counts.", name: "Serverless Sales Pipeline", group: "Data", repo: "aws-serverless-sales-pipeline", img: "serverless-sales-pipeline",
       stack: "Terraform, S3, SQS, Lambda (Python), DynamoDB, Glue Data Catalog, Athena, CloudWatch, SNS, GitHub Actions with OIDC",
       cv: "Branch sales files land in S3 and Lambda checks every row. Rejected rows are kept with the reason. SQS, DynamoDB and Athena, deployed by GitHub Actions with no stored keys.",
       problem: "A retailer's branches each send a weekly sales spreadsheet. Head office combines them by hand, errors surface after reports have gone out, and nobody can say which file a number came from.",
@@ -1166,7 +1239,7 @@
       ],
       next: ["Glue (Spark) or Step Functions if the transformations or volumes grow", "Customer-managed KMS keys, left out here because each has a monthly charge"] },
 
-    { id: "edge-analytics", name: "Edge Analytics", group: "Data", repo: "aws-edge-analytics", img: "edge-analytics",
+    { id: "edge-analytics", headline: "Cache hits on tracked links went from 1 in 99 to 99 in 99, and every answer planted in a synthetic week of traffic was found.", name: "Edge Analytics", group: "Data", repo: "aws-edge-analytics", img: "edge-analytics",
       stack: "CloudFront Functions, S3, Glue (Spark, Iceberg), Athena, Lake Formation, Step Functions, EventBridge Scheduler, KMS, Terraform",
       cv: "Turns CloudFront logs into CDN cost by region, page speed, A/B results and bot traffic, using Step Functions, Glue and Athena.",
       problem: "A UK online retailer serves its site worldwide through Amazon CloudFront. CloudFront logs every request, and nobody reads the logs.",
@@ -1184,7 +1257,7 @@
       ],
       next: ["Real-time logs through Kinesis if the business ever needs minute-by-minute data"] },
 
-    { id: "retail-analytics", name: "Online Retail Analytics", group: "Data", repo: "retail-analysis-case-study", img: "online-retail-analytics",
+    { id: "retail-analytics", headline: "A quarter of customers bring in 70% of the revenue, and 842 former regulars who spent £1.46 million have gone quiet.", name: "Online Retail Analytics", group: "Data", repo: "retail-analysis-case-study", img: "online-retail-analytics",
       stack: "DuckDB SQL, Python (pandas, SciPy, statsmodels), Power BI, EC2 Windows Server, Systems Manager, pytest",
       cv: "1,067,371 transactions analysed in DuckDB and Python, with a Power BI report for the owners.",
       problem: "An online gift-ware retailer's owners have two years of sales, 1,067,371 transactions, and six questions about where the money comes from.",
@@ -1202,7 +1275,7 @@
       ],
       next: [] },
 
-    { id: "invoicing-api", name: "Invoicing and Payments API", group: "Applications", repo: "invoicing-api", img: "invoicing-api",
+    { id: "invoicing-api", headline: "10,734 requests under load with 0 errors, and 20 parallel retries of one payment created exactly 1 payment.", name: "Invoicing and Payments API", group: "Applications", repo: "invoicing-api", img: "invoicing-api",
       stack: "Python, FastAPI, PostgreSQL, Redis, React and TypeScript, OpenTelemetry, Prometheus, Grafana, k6",
       cv: "FastAPI, PostgreSQL and Redis. A retried payment never charges twice. Load test: 10,734 requests, 0 errors, p95 of 129 ms.",
       problem: "Payment systems fail in costly ways: a retried request charges twice, two payments at once overpay an invoice, and a server that crashes at the wrong moment loses a webhook.",
@@ -1221,7 +1294,7 @@
       ],
       next: ["Running on AWS with ECS Fargate, RDS and ElastiCache, which is planned"] },
 
-    { id: "event-orders", name: "Event-Driven Order System", group: "Applications", repo: "event-driven-orders", img: "event-driven-orders",
+    { id: "event-orders", headline: "40 orders raced for 10 monitors and exactly 10 went through. With Kafka down, all 20 orders were still accepted and confirmed after it returned.", name: "Event-Driven Order System", group: "Applications", repo: "event-driven-orders", img: "event-driven-orders",
       stack: "TypeScript (NestJS), Java 21 (Spring Boot), PostgreSQL, Apache Kafka, gRPC, Kubernetes (kind), Helm, OpenTelemetry, Jaeger",
       cv: "NestJS and Spring Boot services talking over Kafka on Kubernetes. When 40 orders raced for 10 items, exactly 10 went through.",
       problem: "An online shop's order and stock systems have to keep working when parts of the system fail, without losing orders or selling stock they do not have.",
@@ -1240,7 +1313,7 @@
       ],
       next: ["A managed Kubernetes cluster on AWS in place of the local one"] },
 
-    { id: "rag-assistant", name: "Governed RAG Assistant", group: "AI", repo: "governed-rag-assistant", img: "governed-rag", status: "Evaluation pending",
+    { id: "rag-assistant", headline: "Answers only from approved procurement notices. None of the 354 contact values in the sources appears in the 2,276 indexed passages.", name: "Governed RAG Assistant", group: "AI", repo: "governed-rag-assistant", img: "governed-rag", status: "Evaluation pending",
       stack: "Amazon Bedrock (Nova Lite, Titan Text Embeddings), Bedrock Guardrails, PostgreSQL with pgvector, FastAPI, Terraform",
       cv: "Answers UK procurement questions from 260 documents using Bedrock in London. Cites its sources and masks personal data, with a governance pack mapped to ISO/IEC 42001. Evaluation still to run.",
       problem: "UK public buyers and suppliers have to find answers across hundreds of pages of Procurement Act 2023 guidance, and the tender notices that go with them carry personal data that must not leak.",
@@ -1263,6 +1336,7 @@
       var rows = function (a) { return a.map(function (r) { return '<tr><th>' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td></tr>'; }).join(''); };
       var src = 'assets/projects/' + p.img + '.png';
       c.innerHTML = '<article class="case"><h1>' + esc(p.name) + '</h1><p class="meta">' + esc(p.group) + ' · ' + esc(p.stack) + '</p>' +
+        '<p class="headline">' + esc(p.headline) + '</p>' +
         '<h2>The problem</h2><p>' + esc(p.problem) + '</p><p class="lede">' + esc(p.lede) + '</p>' +
         '<figure><img src="' + src + '" alt="Architecture diagram: ' + esc(p.name) + '" loading="lazy"><figcaption>Architecture. Click to open it full size.</figcaption></figure>' +
         '<h2>' + esc(p.resultsTitle || 'Measured results') + '</h2><table>' + rows(p.results) + '</table>' +
@@ -1695,14 +1769,14 @@
         }) : [{ label: 'No Windows', disabled: true }]);
       }
       case 'hire': return [
-        { label: 'Email Tapiwa', run: function () { location.href = 'mailto:' + EMAIL + '?subject=Hiring%20enquiry'; } },
+        { label: 'tapiwa.magumise96@gmail.com', run: function () { location.href = 'mailto:' + EMAIL + '?subject=Hiring%20enquiry'; } },
         { label: 'Download CV', run: function () { downloadResume(); } },
         { label: 'GitHub', run: function () { window.open('https://github.com/tapiwa-magumise', '_blank', 'noopener'); } },
         '-',
         { label: 'Projects', run: function () { openWindow('projects'); } }
       ];
       case 'help': return [
-        { label: 'How to Get Around', run: function () { openWindow('readme'); } },
+        { label: 'Read Me', run: function () { openWindow('readme'); } },
         { label: 'Search', run: function () { openSpotlight(); } }
       ];
       case 'desktop': return [
@@ -1791,7 +1865,8 @@
   var index = [
     { id: 'about', kind: 'System', words: 'about summary profile' },
     { id: 'getinfo', kind: 'Info', words: 'about me details contact location email' },
-    { id: 'readme', kind: 'Document', words: 'help navigate how to get around' },
+    { id: 'readme', kind: 'Document', words: 'read me about hire contact email cv help navigate' },
+    { id: 'sitebuild', kind: 'Document', words: 'how this site is built hosting github pages actions terraform s3 cloudfront oidc cost' },
     { id: 'resume', kind: 'Folder', words: 'cv experience skills work' },
     { id: 'certifications', kind: 'Folder', words: 'aws certified solutions architect developer credly' },
     { id: 'projects', kind: 'Folder', words: 'aws projects case studies architecture terraform built' },
@@ -2187,7 +2262,7 @@
   };
 
   // ---------- Notes: published writing ----------
-  var NOTES = [{"title": "Zimbabwe is not in Stripe’s list of supported countries.", "html": "<p>Zimbabwe is not in Stripe’s list of supported countries. I’m building a Stripe risk monitoring product from Zimbabwe. That’s not the ironic part. The ironic part is that I understand Stripe’s risk system better than most of their merchants do, and I’ve never processed a single payment through it.<\/p><p>Here’s how that happened.<\/p><h2>200 Frozen Account Stories<\/h2><p>Six months ago I started collecting frozen Stripe account posts from Reddit. Not skimming. Collecting. Cataloguing the trigger, the merchant’s response, the outcome. I wanted to know if there was a pattern.<\/p><p>There is. And it’s not the one most people assume.<\/p><p>Most merchants think Stripe freezes accounts because of high risk. That’s close, but it misses the point. Stripe freezes accounts because of <i>unexpected<\/i> risk. The distinction is the entire game.<\/p><h2>The Surprise Principle<\/h2><p>A business processing $50,000 a month with a steady 0.4% dispute rate is fine. That same business with a 0.4% rate that was 0.1% three weeks ago is a problem. Same numbers. Same rate. Completely different signal.<\/p><p>Stripe isn’t asking “is this merchant risky?” They’re asking “is this merchant behaving differently than they were last month?”<\/p><p>I started calling this the Surprise Principle, because every frozen account story I catalogued had the same shape: the merchant’s numbers changed faster than the system expected. Not worse. Just different.<\/p><p>Launched a product. Ran a promotion. Got featured somewhere. Revenue spiked. The merchant sees a success story. Stripe’s pattern detector sees something that looks, to an automated system, almost identical to a compromised account ramping up.<\/p><p>There’s no “heads up, we’re about to grow” button. So the system flags the anomaly and freezes first.<\/p><h2>Three Signals, One Blind Spot<\/h2><p>From the 200+ cases I catalogued, three metrics consistently sit at the center:<\/p><p><b>Dispute rate trajectory.<\/b> The Visa VDMP program kicks in at 0.9%. Mastercard ECM at 1.5%. Stripe’s own threshold sits lower than both. But the number that triggers review isn’t the rate itself. It’s the rate of change. A steady 0.6% is safer than a 0.2% that’s climbing.<\/p><p><b>Refund acceleration.<\/b> A steady 5% refund rate is a business model. A refund rate that jumped from 2% to 8% in two weeks is a signal that something broke. Stripe doesn’t know if it’s a product quality issue or a shipping delay. They just see the graph change shape.<\/p><p><b>Transaction velocity spikes.<\/b> Not just dollar volume. Transaction count matters independently. Going from 200 transactions per month to 2,000 triggers pattern detection regardless of what you’re selling.<\/p><p>And here’s the blind spot: you can see all three numbers in your Stripe dashboard. You cannot see how Stripe’s risk model interprets those numbers relative to your own history. You don’t know if you’re 30 days from a freeze or 300.<\/p><h2>Why I’m Building This From the Outside<\/h2><p>I didn’t plan on doing so but I had to register a UK company from Zimbabwe because Stripe doesn’t operate here. That part took an afternoon. The part that took weeks was everything after.<\/p><p>To accept payments globally, you need a business bank account. I applied to Tide. Rejected. Non-resident director. Revolut Business. Rejected. Requires EEA residency. Starling. UK residents only. Wise Business. Same. Four applications, four rejections, each one taking days of document uploads and verification steps before the “no” arrived.<\/p><p>Payoneer eventually said yes. One out of five.<\/p><p>What should have been a routine admin task, the kind of thing a founder in London or San Francisco does between lunch and their first meeting, took me the better part of a month. Not because the paperwork was complex. Because the system wasn’t built for someone with my passport.<\/p><p>The global payments infrastructure assumes you live in one of about 40 countries. If you do, none of this registers as a problem. If you don’t, you spend your first month as a founder proving you’re allowed to participate before you write a single line of code.<\/p><p>The irony isn’t lost on me. The problem I’m solving, merchants losing their businesses to a platform they depend on but don’t understand, is a problem that exists everywhere Stripe operates. But the infrastructure to build the solution assumes I’m already inside the system I’m trying to fix.<\/p><p>I’m not inside it. I built PayCanary anyway.<\/p><p>In a way, being on the outside is an advantage. I have no legacy Stripe integration to protect. No existing merchant relationship clouding my judgement about what the platform actually does versus what it says it does. I just have the data from 200 merchants who learned the hard way.<\/p><p>Stripe is managing their downside. Most merchants aren’t managing theirs. The merchants who survive aren’t the ones with the best numbers. They’re the ones whose numbers are predictable.<\/p><h2>Check Your Own Numbers<\/h2><p>Before you close this tab, do one thing. Open your Stripe dashboard. Go to Payments &gt; Disputes. Look at your dispute rate for the last 3 months. Now compare it to the 3 months before that.<\/p><p>If the number went up, it doesn’t matter that it’s still below 0.9%. What matters is the direction.<\/p><p>Now do the same for refunds. Payments &gt; All payments, filter by refunded. Is the refund rate climbing? Flat? Dropping?<\/p><p>If both are climbing, even slowly, you’re moving toward a review trigger and your dashboard won’t warn you until it’s too late.<\/p><p>If you want to see how all three metrics (disputes, refunds, velocity) interact to produce your actual risk level, I built a free diagnostic that runs the same analysis I used on those 200 Reddit cases. Takes 60 seconds: paycanary.io/diagnostic<\/p><h2>The Takeaway<\/h2><p>Stripe doesn’t hate risk. They hate surprises.<\/p><p>A steady “okay” is safer than an unstable “great.” The merchants who get frozen aren’t the riskiest ones. They’re the ones whose numbers changed shape in a way that a pattern detector couldn’t predict.<\/p><p>Monitor the trend, not just the number.<\/p><p>I’m curious: if you’ve had a Stripe freeze or a close call, what triggered it? Was it a volume spike, a dispute cluster, or something else entirely? I’m still cataloguing cases and every story sharpens the model.<\/p><p><i>I write about Stripe risk, payment infrastructure from places it wasn’t designed for, and what it’s actually like to build a SaaS from southern Africa. @tapiwa-magumise everywhere.<\/i><\/p>"}, {"title": "In Zimbabwe, where I’m from, street vendors call their customers “murungu.”", "html": "<p>In Zimbabwe, where I’m from, street vendors call their customers “murungu.” It literally means white person. It comes from the colonial era, when the people with money, the people you sold to, were white. Colonialism ended but the word stuck around. It shifted. Now it just means the customer. The person with the money. The one you need to keep coming back.<\/p><p>This isn’t exclusive to us. In Nigeria, street vendors call their customers “oga,” from the Yoruba word for master or chief. In Kenya, it’s “bwana,” Swahili for sir, a word that was hardened during British colonial rule when Africans were required to address white settlers that way. In South Africa, it was “baas,” Afrikaans for boss, the same word that gave apartheid its ideology of “baasskap,” white mastery.<\/p><p>Four countries. Four words. All originally meant the same thing: the colonizer. The one with the power. And all four got repurposed by street vendors into something else entirely. Now they just mean the customer. The person with the money.<\/p><p>There’s something brutally honest about that. The language carries the history of a power imbalance right there in the slang, and the vendors use it anyway because they understand something fundamental. The murungu has the leverage. Always has. A vendor in Harare knows that if the murungu is unhappy, you give them their money back. You don’t argue. You don’t prove you’re right. Because the cost of being right is losing that customer, losing every customer watching, and spending your afternoon in a fight instead of making sales. The murungu can go anywhere. You can’t.<\/p><p>I think about that a lot now. I’m building a Stripe risk monitoring tool from Harare, and the more dispute cases I read online, the more I realize these vendors understood something most online merchants haven’t figured out. The cost of fighting isn’t just the fight. It’s everything that happens around it. And the person with the money, whether it’s a murungu at a market stall in Harare or a cardholder calling their bank in Ohio, always has more options than you do.<\/p><p>Most merchants fight every Stripe dispute on principle. Someone files a chargeback, it feels like theft, and the instinct is to fight back. But principle has a price, and most merchants don’t know what it actually costs until it’s too late.<\/p><p>I wrote in my last piece about how Stripe watches your trajectory, not your absolute numbers. Disputes are where that trajectory gets decided. And most merchants make the wrong call.<\/p><h2>The Real Cost of a Dispute Isn’t the Fee<\/h2><p>Stripe charges $15 the moment a dispute is filed. That’s gone whether you fight or not.<\/p><p>Since June 2025, if you choose to counter the dispute, there’s an additional $15 counter fee. You get that back if you win. If you lose, you’re out $30 in fees plus the full transaction amount.<\/p><p>But those numbers are the small part. The expensive part is what a dispute does to your dispute rate.<\/p><p>Visa retired its old monitoring programs (VDMP and VFMP) in March 2025 and consolidated everything into VAMP, the Visa Acquirer Monitoring Program. As of April 2026, the merchant threshold is 1.5% in North America, the EU, and Asia Pacific. Exceed that and you’re looking at fines that start at $25,000 per month and can hit $75,000+. Your acquirer (in most cases, Stripe) will pass those fines to you, or more likely, just close your account.<\/p><p>Here’s what most merchants miss: a dispute counts toward your rate whether you win or lose. Fighting a dispute and winning it still adds to the numerator. The only things that don’t count are disputes that get withdrawn before the card network processes them. Pre-dispute alerts (through services like Ethoca or Verifi) can catch these. A refund before the formal dispute is filed can catch these. But once it’s filed, it counts. Period.<\/p><p>So the question isn’t “can I win this dispute?” The question is “what does this dispute do to my rate, and is the transaction amount worth the rate impact?”<\/p><h2>The Math Nobody Does<\/h2><p>Say you’re processing 500 transactions a month. Your current dispute rate is 0.8%, which is 4 disputes. You’re under VAMP’s 1.5% threshold but Stripe starts watching around 0.75%. You’re already on their radar.<\/p><p>A new dispute comes in for $75. You have decent evidence. You think you can win.<\/p><p><b>If you fight it and win:<\/b> your dispute rate still went up because the dispute was filed. You kept the $75 and got the $15 counter fee refunded. Net outcome: +$75, dispute rate increased.<\/p><p><b>If you fight it and lose:<\/b> you lose the $75 transaction, pay $30 in total fees. Net outcome: -$105, dispute rate increased.<\/p><p><b>If you refund before the dispute is formally processed:<\/b> you lose the $75 but the dispute may not count toward your rate (timing dependent). You pay no dispute fees. Net outcome: -$75, dispute rate potentially unchanged.<\/p><p>For a $75 transaction, the best financial outcome of fighting ($75 recovered) is only $0 better than the worst outcome of refunding ($75 lost), but fighting carries rate risk in both scenarios.<\/p><p>The breakeven shifts when transactions get larger. A $500 dispute? Fight it if you have strong evidence. A $2,000 dispute? Definitely fight it. But for anything under $100 with weak evidence, the refund is almost always the better business decision.<\/p><h2>Stripe’s Smart Disputes Changes the Math Again<\/h2><p>Stripe rolled out Smart Disputes in late 2025. It uses AI to automatically submit evidence for you and waives the $15 counter fee. Sounds great until you read the pricing.<\/p><p>If Smart Disputes wins, Stripe takes 30% of the recovered amount as a success fee. On a $50 dispute, that’s $15, same as the manual counter fee. On a $500 dispute, that’s $150. On a $1,000 dispute, $300.<\/p><p>For high-value disputes, you’re almost certainly better off submitting evidence manually and paying the $15 counter fee yourself. Smart Disputes makes sense for low-value, high-volume disputes where you wouldn’t bother submitting evidence manually anyway.<\/p><p>But here’s the thing most people miss about Smart Disputes: even when it wins, the dispute still counts toward your rate. Smart Disputes optimizes for revenue recovery, not rate management. Those are two different problems.<\/p><h2>What Actually Reduces Your Dispute Rate<\/h2><p>Winning disputes doesn’t reduce your rate. Preventing them does.<\/p><p>The single highest-impact thing most merchants can do is fix their billing descriptor. Go to your Stripe dashboard right now. Settings, then Public details, then Statement descriptor. If it says something your customers wouldn’t recognize on their credit card statement, that’s generating disputes from confused customers, not from fraud.<\/p><p>I’ve seen this in dozens of Reddit posts. Merchant runs a business called “FreshBox” but their descriptor says “STRIPE* FBINC”. Customer sees “FBINC” on their statement, doesn’t recognize it, calls their bank, files a dispute for “unauthorized transaction.” The merchant had nothing wrong with their product or service. The billing descriptor created the dispute.<\/p><p>The second thing is giving customers an easier path to a refund than calling their bank. This sounds backwards but it works. A clear refund policy on the checkout page, a confirmation email with “not what you expected? reply for an instant refund,” and a follow-up email 24–48 hours after purchase. Every dispute that becomes a refund request instead is a dispute that never hits your rate.<\/p><p>The third thing is pre-dispute alerts. Ethoca (Mastercard) and Verifi (Visa) both offer services that notify you when a cardholder contacts their bank but before the formal dispute is filed. You get a window, usually 24–72 hours, to refund proactively. The dispute never gets processed. It never touches your rate. For any merchant doing $5k+ MRR with a recurring dispute problem, the cost of these services pays for itself immediately.<\/p><h2>When You Should Fight<\/h2><p>I’m not saying never fight a dispute. I’m saying fight the right ones.<\/p><p>Fight when the transaction is over $200 and you have strong evidence. Login logs, delivery confirmation, signed terms, customer communication showing they received and used the product. If you’ve got that, submit it.<\/p><p>Fight when the dispute reason doesn’t match reality. Someone claims “product not received” but you have tracking showing delivery and a signature. Someone claims “unauthorized transaction” but the purchase was 3DS authenticated and liability shifted to the issuer.<\/p><p>Fight when it’s clearly friendly fraud. The customer used the product for a month, then filed a chargeback. You have usage logs, IP addresses matching the billing address, and email communication confirming they received it. These are worth fighting because the evidence is strong and the pattern will repeat if you don’t.<\/p><p>Don’t fight on principle. Don’t fight because it feels unfair. Don’t fight $40 disputes with mediocre evidence just because the customer was wrong. Your dispute rate doesn’t care who was right.<\/p><h2>The Trajectory Question<\/h2><p>This comes back to what I wrote in my first piece. Stripe doesn’t punish risk. It punishes surprises. A steady dispute rate of 0.5% is fine. A rate that jumps from 0.3% to 0.9% in a month will get you flagged, even though 0.9% is technically under VAMP’s threshold.<\/p><p>Every dispute decision you make is a trajectory decision. Fighting a dispute you’re going to lose doesn’t just cost you the transaction and the fees. It adds a data point to a trend line that Stripe is watching.<\/p><p>The vendors in Harare, Lagos, Nairobi, and Johannesburg figured this out without dashboards or analytics. The murungu, the oga, the bwana, the baas. The words changed meaning but the dynamic didn’t. You manage the relationship, not the argument. You give them their money back, keep your spot, and sell to the next person.<\/p><p>The merchants who keep their Stripe accounts long-term do the same thing. They don’t win every dispute. They never let disputes happen in the first place, and when one does happen, they make the financial decision instead of the emotional one.<\/p><p>I’m building PayCanary to catch this trajectory before it becomes a problem. If you want to see where your Stripe account stands right now, run the free risk diagnostic at paycanary.io/diagnostic.<\/p><p>Has anyone else run the math on when fighting vs refunding actually makes sense for their business? Curious what thresholds other merchants use. Leave your answers in the comments or feel free to DM.<\/p>"}];
+  var NOTES = [{"title": "Zimbabwe is not in Stripe’s list of supported countries.", "html": "<p>Zimbabwe is not in Stripe’s list of supported countries. I’m building a Stripe risk monitoring product from Zimbabwe. That’s not the ironic part. The ironic part is that I understand Stripe’s risk system better than most of their merchants do, and I’ve never processed a single payment through it.<\/p><p>Here’s how that happened.<\/p><h2>200 Frozen Account Stories<\/h2><p>Six months ago I started collecting frozen Stripe account posts from Reddit. Not skimming. Collecting. Cataloguing the trigger, the merchant’s response, the outcome. I wanted to know if there was a pattern.<\/p><p>There is. And it’s not the one most people assume.<\/p><p>Most merchants think Stripe freezes accounts because of high risk. That’s close, but it misses the point. Stripe freezes accounts because of <i>unexpected<\/i> risk. The distinction is the entire game.<\/p><h2>The Surprise Principle<\/h2><p>A business processing $50,000 a month with a steady 0.4% dispute rate is fine. That same business with a 0.4% rate that was 0.1% three weeks ago is a problem. Same numbers. Same rate. Completely different signal.<\/p><p>Stripe isn’t asking “is this merchant risky?” They’re asking “is this merchant behaving differently than they were last month?”<\/p><p>I started calling this the Surprise Principle, because every frozen account story I catalogued had the same shape: the merchant’s numbers changed faster than the system expected. Not worse. Just different.<\/p><p>Launched a product. Ran a promotion. Got featured somewhere. Revenue spiked. The merchant sees a success story. Stripe’s pattern detector sees something that looks, to an automated system, almost identical to a compromised account ramping up.<\/p><p>There’s no “heads up, we’re about to grow” button. So the system flags the anomaly and freezes first.<\/p><h2>Three Signals, One Blind Spot<\/h2><p>From the 200+ cases I catalogued, three metrics consistently sit at the center:<\/p><p><b>Dispute rate trajectory.<\/b> The Visa VDMP program kicks in at 0.9%. Mastercard ECM at 1.5%. Stripe’s own threshold sits lower than both. But the number that triggers review isn’t the rate itself. It’s the rate of change. A steady 0.6% is safer than a 0.2% that’s climbing.<\/p><p><b>Refund acceleration.<\/b> A steady 5% refund rate is a business model. A refund rate that jumped from 2% to 8% in two weeks is a signal that something broke. Stripe doesn’t know if it’s a product quality issue or a shipping delay. They just see the graph change shape.<\/p><p><b>Transaction velocity spikes.<\/b> Not just dollar volume. Transaction count matters independently. Going from 200 transactions per month to 2,000 triggers pattern detection regardless of what you’re selling.<\/p><p>And here’s the blind spot: you can see all three numbers in your Stripe dashboard. You cannot see how Stripe’s risk model interprets those numbers relative to your own history. You don’t know if you’re 30 days from a freeze or 300.<\/p><h2>Why I’m Building This From the Outside<\/h2><p>I didn’t plan on doing so but I had to register a UK company from Zimbabwe because Stripe doesn’t operate here. That part took an afternoon. The part that took weeks was everything after.<\/p><p>To accept payments globally, you need a business bank account. I applied to Tide. Rejected. Non-resident director. Revolut Business. Rejected. Requires EEA residency. Starling. UK residents only. Wise Business. Same. Four applications, four rejections, each one taking days of document uploads and verification steps before the “no” arrived.<\/p><p>Payoneer eventually said yes. One out of five.<\/p><p>What should have been a routine admin task, the kind of thing a founder in London or San Francisco does between lunch and their first meeting, took me the better part of a month. Not because the paperwork was complex. Because the system wasn’t built for someone with my passport.<\/p><p>The global payments infrastructure assumes you live in one of about 40 countries. If you do, none of this registers as a problem. If you don’t, you spend your first month as a founder proving you’re allowed to participate before you write a single line of code.<\/p><p>The irony isn’t lost on me. The problem I’m solving, merchants losing their businesses to a platform they depend on but don’t understand, is a problem that exists everywhere Stripe operates. But the infrastructure to build the solution assumes I’m already inside the system I’m trying to fix.<\/p><p>I’m not inside it. I built PayCanary anyway.<\/p><p>In a way, being on the outside is an advantage. I have no legacy Stripe integration to protect. No existing merchant relationship clouding my judgement about what the platform actually does versus what it says it does. I just have the data from 200 merchants who learned the hard way.<\/p><p>Stripe is managing their downside. Most merchants aren’t managing theirs. The merchants who survive aren’t the ones with the best numbers. They’re the ones whose numbers are predictable.<\/p><h2>Check Your Own Numbers<\/h2><p>Before you close this tab, do one thing. Open your Stripe dashboard. Go to Payments &gt; Disputes. Look at your dispute rate for the last 3 months. Now compare it to the 3 months before that.<\/p><p>If the number went up, it doesn’t matter that it’s still below 0.9%. What matters is the direction.<\/p><p>Now do the same for refunds. Payments &gt; All payments, filter by refunded. Is the refund rate climbing? Flat? Dropping?<\/p><p>If both are climbing, even slowly, you’re moving toward a review trigger and your dashboard won’t warn you until it’s too late.<\/p><p>If you want to see how all three metrics (disputes, refunds, velocity) interact to produce your actual risk level, I built a free diagnostic that runs the same analysis I used on those 200 Reddit cases. Takes 60 seconds: paycanary.io/diagnostic<\/p><h2>The Takeaway<\/h2><p>Stripe doesn’t hate risk. They hate surprises.<\/p><p>A steady “okay” is safer than an unstable “great.” The merchants who get frozen aren’t the riskiest ones. They’re the ones whose numbers changed shape in a way that a pattern detector couldn’t predict.<\/p><p>Monitor the trend, not just the number.<\/p><p>I’m curious: if you’ve had a Stripe freeze or a close call, what triggered it? Was it a volume spike, a dispute cluster, or something else entirely? I’m still cataloguing cases and every story sharpens the model.<\/p><p><i>I write about Stripe risk, payment infrastructure from places it wasn’t designed for, and what it’s actually like to build a SaaS from southern Africa. @gumagatsby everywhere.<\/i><\/p>"}, {"title": "In Zimbabwe, where I’m from, street vendors call their customers “murungu.”", "html": "<p>In Zimbabwe, where I’m from, street vendors call their customers “murungu.” It literally means white person. It comes from the colonial era, when the people with money, the people you sold to, were white. Colonialism ended but the word stuck around. It shifted. Now it just means the customer. The person with the money. The one you need to keep coming back.<\/p><p>This isn’t exclusive to us. In Nigeria, street vendors call their customers “oga,” from the Yoruba word for master or chief. In Kenya, it’s “bwana,” Swahili for sir, a word that was hardened during British colonial rule when Africans were required to address white settlers that way. In South Africa, it was “baas,” Afrikaans for boss, the same word that gave apartheid its ideology of “baasskap,” white mastery.<\/p><p>Four countries. Four words. All originally meant the same thing: the colonizer. The one with the power. And all four got repurposed by street vendors into something else entirely. Now they just mean the customer. The person with the money.<\/p><p>There’s something brutally honest about that. The language carries the history of a power imbalance right there in the slang, and the vendors use it anyway because they understand something fundamental. The murungu has the leverage. Always has. A vendor in Harare knows that if the murungu is unhappy, you give them their money back. You don’t argue. You don’t prove you’re right. Because the cost of being right is losing that customer, losing every customer watching, and spending your afternoon in a fight instead of making sales. The murungu can go anywhere. You can’t.<\/p><p>I think about that a lot now. I’m building a Stripe risk monitoring tool from Harare, and the more dispute cases I read online, the more I realize these vendors understood something most online merchants haven’t figured out. The cost of fighting isn’t just the fight. It’s everything that happens around it. And the person with the money, whether it’s a murungu at a market stall in Harare or a cardholder calling their bank in Ohio, always has more options than you do.<\/p><p>Most merchants fight every Stripe dispute on principle. Someone files a chargeback, it feels like theft, and the instinct is to fight back. But principle has a price, and most merchants don’t know what it actually costs until it’s too late.<\/p><p>I wrote in my last piece about how Stripe watches your trajectory, not your absolute numbers. Disputes are where that trajectory gets decided. And most merchants make the wrong call.<\/p><h2>The Real Cost of a Dispute Isn’t the Fee<\/h2><p>Stripe charges $15 the moment a dispute is filed. That’s gone whether you fight or not.<\/p><p>Since June 2025, if you choose to counter the dispute, there’s an additional $15 counter fee. You get that back if you win. If you lose, you’re out $30 in fees plus the full transaction amount.<\/p><p>But those numbers are the small part. The expensive part is what a dispute does to your dispute rate.<\/p><p>Visa retired its old monitoring programs (VDMP and VFMP) in March 2025 and consolidated everything into VAMP, the Visa Acquirer Monitoring Program. As of April 2026, the merchant threshold is 1.5% in North America, the EU, and Asia Pacific. Exceed that and you’re looking at fines that start at $25,000 per month and can hit $75,000+. Your acquirer (in most cases, Stripe) will pass those fines to you, or more likely, just close your account.<\/p><p>Here’s what most merchants miss: a dispute counts toward your rate whether you win or lose. Fighting a dispute and winning it still adds to the numerator. The only things that don’t count are disputes that get withdrawn before the card network processes them. Pre-dispute alerts (through services like Ethoca or Verifi) can catch these. A refund before the formal dispute is filed can catch these. But once it’s filed, it counts. Period.<\/p><p>So the question isn’t “can I win this dispute?” The question is “what does this dispute do to my rate, and is the transaction amount worth the rate impact?”<\/p><h2>The Math Nobody Does<\/h2><p>Say you’re processing 500 transactions a month. Your current dispute rate is 0.8%, which is 4 disputes. You’re under VAMP’s 1.5% threshold but Stripe starts watching around 0.75%. You’re already on their radar.<\/p><p>A new dispute comes in for $75. You have decent evidence. You think you can win.<\/p><p><b>If you fight it and win:<\/b> your dispute rate still went up because the dispute was filed. You kept the $75 and got the $15 counter fee refunded. Net outcome: +$75, dispute rate increased.<\/p><p><b>If you fight it and lose:<\/b> you lose the $75 transaction, pay $30 in total fees. Net outcome: -$105, dispute rate increased.<\/p><p><b>If you refund before the dispute is formally processed:<\/b> you lose the $75 but the dispute may not count toward your rate (timing dependent). You pay no dispute fees. Net outcome: -$75, dispute rate potentially unchanged.<\/p><p>For a $75 transaction, the best financial outcome of fighting ($75 recovered) is only $0 better than the worst outcome of refunding ($75 lost), but fighting carries rate risk in both scenarios.<\/p><p>The breakeven shifts when transactions get larger. A $500 dispute? Fight it if you have strong evidence. A $2,000 dispute? Definitely fight it. But for anything under $100 with weak evidence, the refund is almost always the better business decision.<\/p><h2>Stripe’s Smart Disputes Changes the Math Again<\/h2><p>Stripe rolled out Smart Disputes in late 2025. It uses AI to automatically submit evidence for you and waives the $15 counter fee. Sounds great until you read the pricing.<\/p><p>If Smart Disputes wins, Stripe takes 30% of the recovered amount as a success fee. On a $50 dispute, that’s $15, same as the manual counter fee. On a $500 dispute, that’s $150. On a $1,000 dispute, $300.<\/p><p>For high-value disputes, you’re almost certainly better off submitting evidence manually and paying the $15 counter fee yourself. Smart Disputes makes sense for low-value, high-volume disputes where you wouldn’t bother submitting evidence manually anyway.<\/p><p>But here’s the thing most people miss about Smart Disputes: even when it wins, the dispute still counts toward your rate. Smart Disputes optimizes for revenue recovery, not rate management. Those are two different problems.<\/p><h2>What Actually Reduces Your Dispute Rate<\/h2><p>Winning disputes doesn’t reduce your rate. Preventing them does.<\/p><p>The single highest-impact thing most merchants can do is fix their billing descriptor. Go to your Stripe dashboard right now. Settings, then Public details, then Statement descriptor. If it says something your customers wouldn’t recognize on their credit card statement, that’s generating disputes from confused customers, not from fraud.<\/p><p>I’ve seen this in dozens of Reddit posts. Merchant runs a business called “FreshBox” but their descriptor says “STRIPE* FBINC”. Customer sees “FBINC” on their statement, doesn’t recognize it, calls their bank, files a dispute for “unauthorized transaction.” The merchant had nothing wrong with their product or service. The billing descriptor created the dispute.<\/p><p>The second thing is giving customers an easier path to a refund than calling their bank. This sounds backwards but it works. A clear refund policy on the checkout page, a confirmation email with “not what you expected? reply for an instant refund,” and a follow-up email 24–48 hours after purchase. Every dispute that becomes a refund request instead is a dispute that never hits your rate.<\/p><p>The third thing is pre-dispute alerts. Ethoca (Mastercard) and Verifi (Visa) both offer services that notify you when a cardholder contacts their bank but before the formal dispute is filed. You get a window, usually 24–72 hours, to refund proactively. The dispute never gets processed. It never touches your rate. For any merchant doing $5k+ MRR with a recurring dispute problem, the cost of these services pays for itself immediately.<\/p><h2>When You Should Fight<\/h2><p>I’m not saying never fight a dispute. I’m saying fight the right ones.<\/p><p>Fight when the transaction is over $200 and you have strong evidence. Login logs, delivery confirmation, signed terms, customer communication showing they received and used the product. If you’ve got that, submit it.<\/p><p>Fight when the dispute reason doesn’t match reality. Someone claims “product not received” but you have tracking showing delivery and a signature. Someone claims “unauthorized transaction” but the purchase was 3DS authenticated and liability shifted to the issuer.<\/p><p>Fight when it’s clearly friendly fraud. The customer used the product for a month, then filed a chargeback. You have usage logs, IP addresses matching the billing address, and email communication confirming they received it. These are worth fighting because the evidence is strong and the pattern will repeat if you don’t.<\/p><p>Don’t fight on principle. Don’t fight because it feels unfair. Don’t fight $40 disputes with mediocre evidence just because the customer was wrong. Your dispute rate doesn’t care who was right.<\/p><h2>The Trajectory Question<\/h2><p>This comes back to what I wrote in my first piece. Stripe doesn’t punish risk. It punishes surprises. A steady dispute rate of 0.5% is fine. A rate that jumps from 0.3% to 0.9% in a month will get you flagged, even though 0.9% is technically under VAMP’s threshold.<\/p><p>Every dispute decision you make is a trajectory decision. Fighting a dispute you’re going to lose doesn’t just cost you the transaction and the fees. It adds a data point to a trend line that Stripe is watching.<\/p><p>The vendors in Harare, Lagos, Nairobi, and Johannesburg figured this out without dashboards or analytics. The murungu, the oga, the bwana, the baas. The words changed meaning but the dynamic didn’t. You manage the relationship, not the argument. You give them their money back, keep your spot, and sell to the next person.<\/p><p>The merchants who keep their Stripe accounts long-term do the same thing. They don’t win every dispute. They never let disputes happen in the first place, and when one does happen, they make the financial decision instead of the emotional one.<\/p><p>I’m building PayCanary to catch this trajectory before it becomes a problem. If you want to see where your Stripe account stands right now, run the free risk diagnostic at paycanary.io/diagnostic.<\/p><p>Has anyone else run the math on when fighting vs refunding actually makes sense for their business? Curious what thresholds other merchants use. Leave your answers in the comments or feel free to DM.<\/p>"}];
   registry.notes.render = function (c, id) {
     c.classList.add('notes-host');
     c.innerHTML = '<div class="notes"><nav class="n-side" aria-label="Notes"></nav><article class="n-body"></article></div>';
@@ -2650,6 +2725,7 @@
 
   // ---------- Welcome notification, once per visit ----------
   function notifyOnce() {
+    if (phone.matches) return;                            // on a phone it would cover the Read Me
     try { if (sessionStorage.getItem('notified')) return; sessionStorage.setItem('notified', '1'); } catch (e) {}
     var n = document.getElementById('notif');
     setTimeout(function () { n.classList.add('show'); }, 1200);
