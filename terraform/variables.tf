@@ -8,10 +8,12 @@ variable "name" {
   default = "portfolio"
 }
 
-variable "github_repo" {
+# GitHub's OIDC subject for this repo includes immutable owner and repo IDs.
+# Find it with: gh api repos/<owner>/<repo>/actions/oidc/customization/sub
+variable "github_subject_prefix" {
   description = "Only pushes to this repository's main branch may deploy."
   type        = string
-  default     = "tapiwa-magumise/portfolio"
+  default     = "repo:tapiwa-magumise@266259364/portfolio@1424381430"
 }
 
 variable "price_class" {
