@@ -1,0 +1,33 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+    paths: ["index.html", "print.css", "favicon.svg", "assets/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency: deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.DEPLOY_ROLE_ARN }}
+          aws-region: eu-west-2
+      # The page itself is short-lived in caches so a deploy shows quickly; media changes rarely.
+      - name: Upload assets
+        run: aws s3 sync assets "s3://${{ vars.SITE_BUCKET }}/assets" --delete --cache-control "public, max-age=86400"
+      - name: Upload page
+        run: |
+          for f in index.html print.css favicon.svg; do
+            aws s3 cp "$f" "s3://${{ vars.SITE_BUCKET }}/$f" --cache-control "public, max-age=300"
+          done
+      - name: Clear the CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id "${{ vars.DISTRIBUTION_ID }}" --paths "/*"
