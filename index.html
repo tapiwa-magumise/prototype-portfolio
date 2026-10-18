@@ -1088,7 +1088,7 @@
   var resumePdf = { name: 'Tapuwanashe Magumise Resume.pdf', kind: 'PDF Document', icon: 'pdf', href: PDF };
   // ---------- Projects: nine AWS case studies. Every figure comes from the project's repo ----------
   var PROJECTS = [
-    { id: "landing-zone", name: "Multi-account landing zone", group: "Foundations and security", repo: "aws-landing-zone", img: "landing-zone",
+    { id: "landing-zone", name: "Multi-Account Landing Zone", group: "Foundations and security", repo: "aws-landing-zone", img: "landing-zone",
       stack: "Terraform, AWS Organizations, service control policies, CloudTrail, IAM Identity Center, IAM Access Analyzer, GuardDuty, Security Hub",
       cv: "AWS organisation in Terraform with service control policies, an organisation-wide CloudTrail under Object Lock, and sign-in through IAM Identity Center.",
       problem: "Most companies start with one AWS account. Production, testing and billing live together, everyone has broad access, and one mistake can affect everything. When an auditor asks who did what, there is no reliable answer.",
@@ -1108,7 +1108,7 @@
       ],
       next: ["GuardDuty and Security Hub switched on", "Stricter guardrails for the production OU, which is kept separate for that reason"] },
 
-    { id: "hybrid-dr", name: "Hybrid migration and DR", group: "Foundations and security", repo: "aws-hybrid-migration-dr", img: "hybrid-migration-dr",
+    { id: "hybrid-dr", name: "Hybrid Migration and DR", group: "Foundations and security", repo: "aws-hybrid-migration-dr", img: "hybrid-migration-dr",
       stack: "Terraform, EC2, RDS for PostgreSQL, S3, Systems Manager, Secrets Manager",
       cv: "Moved an office app, its PostgreSQL database and files to AWS with 94 seconds of frozen writes and every row checked by hash. In the DR drill the app was back up in Ireland 18 min 27 s after London went down.",
       problem: "A small company runs its job-tracking app, a PostgreSQL database and a folder of uploaded files on one server in the office.",
@@ -1128,7 +1128,7 @@
 
     { id: "security-review", name: "Security and Cost Review Agent", group: "Foundations and security", repo: "aws-security-cost-review", img: "security-cost-review",
       stack: "Python, python-hcl2, boto3, IAM SecurityAudit role, Amazon Bedrock, Terraform, pytest, moto",
-      cv: "Python tool that reviews Terraform code or a live AWS account against 24 Well-Architected rules, through a read-only role.",
+      cv: "Python agent that reviews Terraform code or a live AWS account against 24 Well-Architected rules, through a read-only role.",
       problem: "A small company on AWS has no cloud specialist. The bill has crept up, and a customer's security questionnaire asks who can reach their data. A consultant answers that by hand over several days.",
       lede: "A first pass that takes minutes. It reads a company's Terraform or its live account through a read-only role and writes a report a manager can act on: where it is exposed, where it pays for nothing, and what would fail badly, each finding tied to an AWS Well-Architected best practice.",
       resultsTitle: "What it found",
@@ -1146,7 +1146,7 @@
       ],
       next: ["The Operational Excellence, Performance Efficiency and Sustainability pillars", "A model-written summary in the live report once Bedrock access is restored"] },
 
-    { id: "sales-pipeline", name: "Serverless sales pipeline", group: "Data", repo: "aws-serverless-sales-pipeline", img: "serverless-sales-pipeline",
+    { id: "sales-pipeline", name: "Serverless Sales Pipeline", group: "Data", repo: "aws-serverless-sales-pipeline", img: "serverless-sales-pipeline",
       stack: "Terraform, S3, SQS, Lambda (Python), DynamoDB, Glue Data Catalog, Athena, CloudWatch, SNS, GitHub Actions with OIDC",
       cv: "Branch sales files land in S3 and Lambda checks every row. Rejected rows are kept with the reason. SQS, DynamoDB and Athena, deployed by GitHub Actions with no stored keys.",
       problem: "A retailer's branches each send a weekly sales spreadsheet. Head office combines them by hand, errors surface after reports have gone out, and nobody can say which file a number came from.",
@@ -1166,7 +1166,7 @@
       ],
       next: ["Glue (Spark) or Step Functions if the transformations or volumes grow", "Customer-managed KMS keys, left out here because each has a monthly charge"] },
 
-    { id: "edge-analytics", name: "Edge analytics", group: "Data", repo: "aws-edge-analytics", img: "edge-analytics",
+    { id: "edge-analytics", name: "Edge Analytics", group: "Data", repo: "aws-edge-analytics", img: "edge-analytics",
       stack: "CloudFront Functions, S3, Glue (Spark, Iceberg), Athena, Lake Formation, Step Functions, EventBridge Scheduler, KMS, Terraform",
       cv: "Turns CloudFront logs into CDN cost by region, page speed, A/B results and bot traffic, using Step Functions, Glue and Athena.",
       problem: "A UK online retailer serves its site worldwide through Amazon CloudFront. CloudFront logs every request, and nobody reads the logs.",
@@ -1184,7 +1184,7 @@
       ],
       next: ["Real-time logs through Kinesis if the business ever needs minute-by-minute data"] },
 
-    { id: "retail-analytics", name: "Online retail analytics", group: "Data", repo: "retail-analysis-case-study", img: "online-retail-analytics",
+    { id: "retail-analytics", name: "Online Retail Analytics", group: "Data", repo: "retail-analysis-case-study", img: "online-retail-analytics",
       stack: "DuckDB SQL, Python (pandas, SciPy, statsmodels), Power BI, EC2 Windows Server, Systems Manager, pytest",
       cv: "1,067,371 transactions analysed in DuckDB and Python, with a Power BI report for the owners.",
       problem: "An online gift-ware retailer's owners have two years of sales, 1,067,371 transactions, and six questions about where the money comes from.",
@@ -1202,7 +1202,7 @@
       ],
       next: [] },
 
-    { id: "invoicing-api", name: "Invoicing and payments API", group: "Applications", repo: "invoicing-api", img: "invoicing-api",
+    { id: "invoicing-api", name: "Invoicing and Payments API", group: "Applications", repo: "invoicing-api", img: "invoicing-api",
       stack: "Python, FastAPI, PostgreSQL, Redis, React and TypeScript, OpenTelemetry, Prometheus, Grafana, k6",
       cv: "FastAPI, PostgreSQL and Redis. A retried payment never charges twice. Load test: 10,734 requests, 0 errors, p95 of 129 ms.",
       problem: "Payment systems fail in costly ways: a retried request charges twice, two payments at once overpay an invoice, and a server that crashes at the wrong moment loses a webhook.",
@@ -1221,7 +1221,7 @@
       ],
       next: ["Running on AWS with ECS Fargate, RDS and ElastiCache, which is planned"] },
 
-    { id: "event-orders", name: "Event-driven order system", group: "Applications", repo: "event-driven-orders", img: "event-driven-orders",
+    { id: "event-orders", name: "Event-Driven Order System", group: "Applications", repo: "event-driven-orders", img: "event-driven-orders",
       stack: "TypeScript (NestJS), Java 21 (Spring Boot), PostgreSQL, Apache Kafka, gRPC, Kubernetes (kind), Helm, OpenTelemetry, Jaeger",
       cv: "NestJS and Spring Boot services talking over Kafka on Kubernetes. When 40 orders raced for 10 items, exactly 10 went through.",
       problem: "An online shop's order and stock systems have to keep working when parts of the system fail, without losing orders or selling stock they do not have.",
@@ -1240,7 +1240,7 @@
       ],
       next: ["A managed Kubernetes cluster on AWS in place of the local one"] },
 
-    { id: "rag-assistant", name: "Governed RAG assistant", group: "AI", repo: "governed-rag-assistant", img: "governed-rag", status: "Evaluation pending",
+    { id: "rag-assistant", name: "Governed RAG Assistant", group: "AI", repo: "governed-rag-assistant", img: "governed-rag", status: "Evaluation pending",
       stack: "Amazon Bedrock (Nova Lite, Titan Text Embeddings), Bedrock Guardrails, PostgreSQL with pgvector, FastAPI, Terraform",
       cv: "Answers UK procurement questions from 260 documents using Bedrock in London. Cites its sources and masks personal data, with a governance pack mapped to ISO/IEC 42001. Evaluation still to run.",
       problem: "UK public buyers and suppliers have to find answers across hundreds of pages of Procurement Act 2023 guidance, and the tender notices that go with them carry personal data that must not leak.",
