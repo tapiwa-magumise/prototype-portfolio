@@ -1222,7 +1222,7 @@
         ["AWS SecurityAudit policy with an external id", "Clients' security teams recognise the policy, and the external id stops anyone else pointing the tool at their account."],
         ["Refused checks are listed, not hidden", "A partial review that says what it could not see is still useful. Nothing refused is reported as passed."]
       ],
-      next: ["The Operational Excellence, Performance Efficiency and Sustainability pillars", "A model-written summary in the live report once Bedrock access is restored"] },
+      next: ["The Operational Excellence, Performance Efficiency and Sustainability pillars", "A model-written summary in the live report"] },
 
     { id: "sales-pipeline", headline: "No sale is lost silently: every rejected row is kept with its reasons, and uploading a file twice never double-counts.", name: "Serverless Sales Pipeline", group: "Data", repo: "aws-serverless-sales-pipeline", img: "serverless-sales-pipeline",
       stack: "Terraform, S3, SQS, Lambda (Python), DynamoDB, Glue Data Catalog, Athena, CloudWatch, SNS, GitHub Actions with OIDC",
@@ -1326,7 +1326,7 @@
       resultsTitle: "What is measured",
       results: [
         ["Personal data", "All 354 contact values in the source notices checked against the 2,276 indexed passages: none found."],
-        ["Retrieval, scope and prompt injection", "Evaluation sets are written (32, 20 and 10 cases). The run is waiting on Bedrock access."]
+        ["Retrieval, scope and prompt injection", "Evaluation sets are written (32, 20 and 10 cases). The run is still to do."]
       ],
       decisions: [
         ["Amazon Nova Lite in London", "Prompts never leave the UK. A third-party model was offered only through cross-region routing that could send requests outside the UK."],
@@ -1334,7 +1334,7 @@
         ["Two Bedrock Guardrails", "One masks personal data as documents are loaded. The other checks questions and answers for prompt attacks, denied topics and grounding."],
         ["A governance pack", "Model card, datasheet, DPIA, EU AI Act classification and a risk assessment against ISO/IEC 42001."]
       ],
-      next: ["The evaluation run, and a similarity threshold set from its results, once Bedrock access is restored"] }
+      next: ["The evaluation run, and a similarity threshold set from its results"] }
   ];
   PROJECTS.forEach(function (p) {
     registry['proj-' + p.id] = { title: p.name, app: 'Preview', w: 880, h: 620, render: function (c) {
